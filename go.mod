@@ -1,4 +1,4 @@
-module gqlgen-apollo-error
+module github.com/s-ichikawa/gqlgen-apollo-error
 
 go 1.17
 
