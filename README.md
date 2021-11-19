@@ -58,7 +58,14 @@ Response:
 ### WithError
 Add an error message separately from the `errors.message`:
 ```go
-
+func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
+	...
+	if err != nil {
+		return nil, gqlgen_apollo_error.UserInputError(
+			"Invalid argument value", 
+			gqlgen_apollo_error.WithError(err),
+		)
+	}
 ```
 Response
 ```json
